@@ -1,0 +1,43 @@
+# Project 1 answers -- fill in every value (numbers only, no units).
+# Lines starting with '#' are ignored.  Do not rename the keys.
+variant = E0E201
+username = Himadri_Saha
+
+# ---- Part C: analysis of the ORIGINAL program --------------------------------------
+# dynamic instruction count when the input is n = 10
+ic_n10 =
+# closed form IC(n) = a*n^2 + b*n + c   (valid for n >= 1)
+ic_a =
+ic_b =
+ic_c =
+# dynamic instruction mix for n = 10  (the seven classes must add up to ic_n10)
+mix_alu =
+mix_muldiv =
+mix_load =
+mix_store =
+mix_branch =
+mix_jump =
+mix_system =
+# using the CPI table and a 500 MHz clock
+cycles_n10 =
+cpi_n10 =
+time_n10_us =
+
+# ---- Part D: your OPTIMIZED program, input n = 100 -----------------------------------
+orig_cycles_n100 =
+opt_ic_n100 =
+opt_cycles_n100 =
+speedup_n100 =
+
+# ---- EECE.5821 only ---------------------------------------------------------------
+# G1: smallest n in sweep.csv at which your optimized.s is at least 10x faster (cycles)
+g1_crossover_n =
+# G2: machine A = the Part C CPI table at 500 MHz; machine B = the table in the handout at 300 MHz
+a_orig_time_n100_us =
+b_orig_cycles_n100 =
+b_orig_time_n100_us =
+b_vs_a_orig_n100 =
+b_opt_cycles_n100 =
+b_opt_time_n100_us =
+b_vs_a_opt_n100 =
+b_clock_match_mhz =
