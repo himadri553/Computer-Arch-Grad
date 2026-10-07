@@ -5,23 +5,23 @@ username = Himadri_Saha
 
 # ---- Part C: analysis of the ORIGINAL program --------------------------------------
 # dynamic instruction count when the input is n = 10
-ic_n10 =
+ic_n10 = 441
 # closed form IC(n) = a*n^2 + b*n + c   (valid for n >= 1)
-ic_a =
-ic_b =
-ic_c =
+ic_a = 2
+ic_b = 22
+ic_c = 21
 # dynamic instruction mix for n = 10  (the seven classes must add up to ic_n10)
-mix_alu =
-mix_muldiv =
-mix_load =
-mix_store =
-mix_branch =
-mix_jump =
-mix_system =
+mix_alu = 235
+mix_muldiv = 0
+mix_load = 10
+mix_store = 10
+mix_branch = 87
+mix_jump = 95
+mix_system = 4
 # using the CPI table and a 500 MHz clock
-cycles_n10 =
-cpi_n10 =
-time_n10_us =
+cycles_n10 = 1616
+cpi_n10 = 3.6644
+time_n10_us = 3.232
 
 # ---- Part D: your OPTIMIZED program, input n = 100 -----------------------------------
 orig_cycles_n100 =
