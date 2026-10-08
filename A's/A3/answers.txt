@@ -1,0 +1,119 @@
+# HW: Datapath, Pipelining, and Hazards -- autograded answers
+# Fill in each blank after the '=' sign. Numbers only (units are optional:
+# '320' and '320 ps' are both fine). Anything after # is a comment.
+# Do not rename or delete the keys. Submit this file together with schedule.s.
+
+# Problem 1(a): Single-cycle time per instruction class
+P1a_lw = 1000 # picoseconds  (1 pt)
+P1a_sw = 900 # picoseconds  (1 pt)
+P1a_rtype = 700 # picoseconds  (1 pt)
+P1a_beq = 600 # picoseconds  (1 pt)
+
+# Problem 1(b): Single-cycle clock period
+P1b_clock = 1000 # picoseconds  (1 pt)
+
+# Problem 1(c): Average time with an ideal variable-length clock
+P1c_avg = 775 # picoseconds  (2 pt)
+
+# Problem 1(d): Pipelined clock period
+P1d_clock = 320 # picoseconds  (2 pt)
+
+# Problem 1(e): Pipelined latency of one lw
+P1e_lw_latency = 1600 # picoseconds  (2 pt)
+
+# Problem 1(f): Pipelined speedup
+P1f_speedup = 3.125 # number  (2 pt)
+
+# Problem 1(g): Six-stage pipeline
+P1g_clock = 270 # picoseconds  (1 pt)
+P1g_speedup = 3.703703704 # number  (1 pt)
+P1g_bottleneck = IF # IF, ID, EX, MEM, or WB  (1 pt)
+
+# Problem 2(a): Total cycles for the 5-instruction sequence
+P2a_cycles = 9 # integer  (2 pt)
+
+# Problem 2(b): Total cycles for 100 instructions
+P2b_cycles = 104 # integer  (2 pt)
+
+# Problem 2(c): Pipeline contents in cycle 5
+P2c_IF = I5 # I1..I5  (1 pt)
+P2c_ID = I4 # I1..I5  (1 pt)
+P2c_EX = I3 # I1..I5  (1 pt)
+P2c_MEM = I2 # I1..I5  (1 pt)
+P2c_WB = I1 # I1..I5  (1 pt)
+
+# Problem 2(d): MEM/WB register in cycle 6
+P2d_instr = I2 # I1..I5  (1 pt)
+P2d_rd = 5 # integer  (1 pt)
+
+# Problem 2(e): Control bits in ID/EX in cycle 5
+P2e_MemWrite = 1 # 0 or 1  (0.5 pt)
+P2e_RegWrite = 0 # 0 or 1  (0.5 pt)
+
+# Problem 3(a): RAW dependencies
+P3a_deps = I1-I2:x5, I1-I3:x5, I2-I3:x6, I2-I6:x6, I3-I4:x8, I5-I6:x9 # comma-separated, format I7-I9:x20  (6 pt)
+
+# Problem 3(b): No forwarding
+P3b_stalls = 8 # integer  (2 pt)
+P3b_cycles = 18 # integer  (2 pt)
+
+# Problem 3(c): Full forwarding
+P3c_stalls = 1 # integer  (2 pt)
+P3c_cycles = 11 # integer  (2 pt)
+
+# Problem 3(d): Source of each EX-stage operand
+P3d_I2_rs1 = MEMWB # RF, EXMEM, or MEMWB  (1 pt)
+P3d_I2_rs2 = RF # RF, EXMEM, or MEMWB  (1 pt)
+P3d_I3_rs1 = EXMEM # RF, EXMEM, or MEMWB  (1 pt)
+P3d_I3_rs2 = RF # RF, EXMEM, or MEMWB  (1 pt)
+P3d_I4_rs1 = RF # RF, EXMEM, or MEMWB  (1 pt)
+P3d_I4_rs2 = EXMEM # RF, EXMEM, or MEMWB  (1 pt)
+P3d_I5_rs1 = RF # RF, EXMEM, or MEMWB  (1 pt)
+P3d_I5_rs2 = RF # RF, EXMEM, or MEMWB  (1 pt)
+P3d_I6_rs1 = EXMEM # RF, EXMEM, or MEMWB  (1 pt)
+P3d_I6_rs2 = RF # RF, EXMEM, or MEMWB  (1 pt)
+
+# Problem 4(a): Original code with forwarding
+P4a_stalls = 3 # integer  (2 pt)
+P4a_cycles = 17 # integer  (2 pt)
+
+# Problem 4(c) is graded from schedule.s
+
+# Problem 5(a): CPI, always stall (1-cycle penalty)
+P5a_cpi = 1.2 # number  (2 pt)
+
+# Problem 5(b): CPI, predict not-taken (1-cycle penalty)
+P5b_cpi = 1.12 # number  (2 pt)
+
+# Problem 5(c): CPI with a 3-cycle penalty
+P5c_stall = 1.6 # number  (2 pt)
+P5c_pnt = 1.36 # number  (2 pt)
+P5c_pred = 1.06 # number  (2 pt)
+
+# Problem 5(d): Speedup of dynamic prediction over stalling
+P5d_speedup = 1.509433962 # number  (2 pt)
+
+# Problem 5(e): Static prediction on a loop
+P5e_branches = 21 # integer  (1 pt)
+P5e_mispred_pnt = 11 # integer  (1 pt)
+P5e_mispred_btfn = 1 # integer  (1 pt)
+P5e_acc_btfn = 95.23809524 # percent, e.g. 87.5  (1 pt)
+
+
+# ================= EECE.5821 (graduate) students only =================
+# Undergraduates: leave this section blank.
+
+# Graduate Problem (b): Forwarding control values
+G2_S1_ForwardA = 10 # 00, 01, or 10  (1 pt)
+G2_S1_ForwardB = 00 # 00, 01, or 10  (1 pt)
+G2_S2_ForwardA = 01 # 00, 01, or 10  (1 pt)
+G2_S2_ForwardB = 01 # 00, 01, or 10  (1 pt)
+G2_S3_ForwardA = 00 # 00, 01, or 10  (1 pt)
+G2_S3_ForwardB = 00 # 00, 01, or 10  (1 pt)
+G2_S4_ForwardA = 01 # 00, 01, or 10  (1 pt)
+G2_S4_ForwardB = 10 # 00, 01, or 10  (1 pt)
+
+# Graduate Problem (c): Load-use hazard detection
+G3_L1_stall = yes # yes or no  (1 pt)
+G3_L2_stall = no # yes or no  (1 pt)
+G3_L3_stall = yes # yes or no  (1 pt)
