@@ -24,10 +24,10 @@ cpi_n10 = 3.6644
 time_n10_us = 3.232
 
 # ---- Part D: your OPTIMIZED program, input n = 100 -----------------------------------
-orig_cycles_n100 =
-opt_ic_n100 =
-opt_cycles_n100 =
-speedup_n100 =
+orig_cycles_n100 = 78206
+opt_ic_n100 = 19
+opt_cycles_n100 = 177
+speedup_n100 = 441.84
 
 # ---- EECE.5821 only ---------------------------------------------------------------
 # G1: smallest n in sweep.csv at which your optimized.s is at least 10x faster (cycles)
