@@ -31,13 +31,13 @@ speedup_n100 = 441.84
 
 # ---- EECE.5821 only ---------------------------------------------------------------
 # G1: smallest n in sweep.csv at which your optimized.s is at least 10x faster (cycles)
-g1_crossover_n =
+g1_crossover_n = 20
 # G2: machine A = the Part C CPI table at 500 MHz; machine B = the table in the handout at 300 MHz
-a_orig_time_n100_us =
-b_orig_cycles_n100 =
-b_orig_time_n100_us =
-b_vs_a_orig_n100 =
-b_opt_cycles_n100 =
-b_opt_time_n100_us =
-b_vs_a_opt_n100 =
-b_clock_match_mhz =
+a_orig_time_n100_us = 156.412
+b_orig_cycles_n100 = 33199
+b_orig_time_n100_us = 110.663
+b_vs_a_orig_n100 = 1.4134
+b_opt_cycles_n100 = 129
+b_opt_time_n100_us = 0.43
+b_vs_a_opt_n100 = 0.8233
+b_clock_match_mhz = 212.25
