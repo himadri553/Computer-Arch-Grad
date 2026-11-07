@@ -5,20 +5,20 @@ username = Himadri
 ## Part A  (RV32_SS, a_control.s)
 # A1 columns: regwr, op1, op2, alu, memwr, wrsrc, taken   (use X for don't-care)
 # rows: lw, sub, beq1 (beq x7), sw, jal, slli, jalr, beq2 (beq x9)
-A1_lw    = regwr:  op1:  op2:  alu:  memwr:  wrsrc:  taken:
-A1_sub   = regwr:  op1:  op2:  alu:  memwr:  wrsrc:  taken:
-A1_beq1  = regwr:  op1:  op2:  alu:  memwr:  wrsrc:  taken:
-A1_sw    = regwr:  op1:  op2:  alu:  memwr:  wrsrc:  taken:
-A1_jal   = regwr:  op1:  op2:  alu:  memwr:  wrsrc:  taken:
-A1_slli  = regwr:  op1:  op2:  alu:  memwr:  wrsrc:  taken:
-A1_jalr  = regwr:  op1:  op2:  alu:  memwr:  wrsrc:  taken:
-A1_beq2  = regwr:  op1:  op2:  alu:  memwr:  wrsrc:  taken:
-A2 =
-A3_cycles =
-A3_cpi =
-A3_tclk_ss =
-A3_tclk_5s =
-A3_time_ss_ps =
+A1_lw    = regwr: true  op1: REG1  op2: IMM   alu: ADD  memwr: false  wrsrc: MEMREAD  taken: false
+A1_sub   = regwr: true  op1: REG1  op2: REG2  alu: SUB  memwr: false  wrsrc: ALURES   taken: false
+A1_beq1  = regwr: false op1: PC    op2: IMM   alu: ADD  memwr: false  wrsrc: X        taken: true
+A1_sw    = regwr: false op1: REG1  op2: IMM   alu: ADD  memwr: true   wrsrc: X        taken: false
+A1_jal   = regwr: true  op1: PC    op2: IMM   alu: ADD  memwr: false  wrsrc: PC4      taken: true
+A1_slli  = regwr: true  op1: REG1  op2: IMM   alu: SLL  memwr: false  wrsrc: ALURES   taken: false
+A1_jalr  = regwr: true  op1: REG1  op2: IMM   alu: ADD  memwr: false  wrsrc: PC4      taken: true
+A1_beq2  = regwr: false op1: PC    op2: IMM   alu: ADD  memwr: false  wrsrc: X        taken: false
+A2 = The ALU adds the PC (0x14) and the offset (0x08) to compute the branch target (0x1c, label equal), and the Branch unit makes the taken decision by comparing Reg 1 (x7) with Reg 2 (x0) and sending Branch taken to choose the target as the next PC.
+A3_cycles = 14
+A3_cpi = 1
+A3_tclk_ss = 900
+A3_tclk_5s = 270
+A3_time_ss_ps = 12600
 
 ## Part B  (RV32_5S_NO_FW_HZ, b_hazard.s)
 B1_cycles =
